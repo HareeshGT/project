@@ -1,0 +1,108 @@
+h1{
+    text-align: center;
+    text-decoration: solid;
+    background-color: darkslategrey;
+    color: white;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+    animation: sri;
+    animation-duration: 0.5s;
+}
+.container
+{
+    border: 0.1px solid rgba(0,0,0, 0.2);
+    padding: 1px;
+    width: 350px;
+    height: 480px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 10px;
+    position: relative;
+
+}
+form{
+    background-color: white;
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px;
+    width: 311px;
+    height: 270px;
+}
+input
+{
+    width: 67%;
+    height: 10%;
+    border: 0.1px solid rgba(0,0,0, 0.6);
+    padding: 4px;
+    border-radius: 4px;
+}
+label
+{
+    font-size: x-large;
+}
+.heading2
+{
+    background-color: green;
+}
+h2
+{
+    position: absolute;
+    top: 0%;
+}
+#head
+{
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    background-color: rgb(62, 151, 224);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    top: 0px;
+    
+}
+#logo
+{
+    align-items: center;
+    height: 55%;
+    width: 15%;
+    margin: 19px;
+    border-radius: 20px;
+}
+#signin
+{
+    background-color: rgb(51, 196, 51);
+    color: white;
+    width: 260.4px;
+    height: 34.9px;
+    border: 0.1px solid rgba(0,0,0, 0.2);
+    padding: 4px;
+    border-radius: 5px;
+}
+#accessportal
+{
+    color: black;
+    text-decoration: none;
+}
+p
+{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+@keyframes sri{
+    from{
+        opacity:0;
+        transform: translatey(-30px);
+    }
+    to{
+        opacity:1;
+        transform:translatey(0px);
+    }
+}
