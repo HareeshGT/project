@@ -1,0 +1,82 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+ background-color: white;
+ overflow-x: hidden;
+}
+header{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    left: 0;
+    padding: 30px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    
+    z-index: 99;
+}
+.logo{
+    color: rgb(15, 226, 163);
+    font-size: 2rem;
+    font-weight: 700;
+}
+ul{
+    position: absolute;
+    left: 40%;
+}
+ul a{
+    margin-left: 20px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color:rgb(15, 226, 163);
+    transition: 0.5s;
+    padding: 7px;
+}
+ ul a:hover,.active{
+    background-color: rgb(15, 226, 163);
+    color: white;
+    border-radius: 5px;
+ }
+ .parallax{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+ }
+ .parallax #text{
+    position: absolute;
+    color:white;
+    text-shadow: 4px 4px 4px rgba(0,0,0,0.2);
+    font-size: 4.5rem;
+    font-weight: 600;
+
+ }
+.parallax img{
+    position: absolute;
+    left: 0;
+    top:0;
+    width: 100%;
+}
+.parallax-text{
+    position: relative;
+    width: 100%;
+    padding: 50px;
+    top: 0;
+    text-align: justify;
+    background-color:#003329;
+    color: white;
+}
+.parallax-text h2{
+    font-size: 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+.parallax-text p{
+    font-size: 17px;
+}
