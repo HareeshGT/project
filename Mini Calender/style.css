@@ -1,0 +1,81 @@
+body{
+    min-height: 100vh;
+    background-color: #444;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.week{
+    height: 100px;
+    background-color:white;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+    padding: 2.5vh;
+    border-radius: 2vh;
+}
+.week li{
+    list-style: none;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5vh;
+    color: #444;
+    border-radius: 1vh;
+    margin-left: 2vh;
+    margin-right: 2vh;
+}
+.week li.active{
+    background-color: rgb(64, 255, 47);
+    transform: translateY(-70px);
+    width: 100px;
+    position: relative;
+    height: 100px;
+    border: 5px solid #444;
+    color: rgb(0, 0, 0);
+    font-size: 3.5vh;
+}
+.week li.active::before{
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: rgb(255, 255, 255);
+    left: -30px;
+    top: 46px;
+    border-top-right-radius: 20px;
+    box-shadow:4px -8px #444 ;
+}
+.week li.active::after{
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: rgb(255, 255, 255);
+    right: -30px;
+    top: 46.9px;
+    border-top-left-radius: 20px;
+    box-shadow: -5px -6.5px #444;
+}
+.active h1{
+    position: absolute;
+    transform: translateY(100px);
+    font-size: 5vh;
+    color: black;
+}
+.active h3{
+    position: absolute;
+    transform: translateY(-60px);
+    font-size: 2vh;
+    font-weight: 800;
+    color: rgb(0, 0, 0);
+}
+.active h5{
+    position: absolute;
+    transform: translateY(65px);
+    font-size: 2vh;
+    color: rgb(0, 0, 0);
+}
