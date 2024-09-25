@@ -1,0 +1,119 @@
+body{
+    height: 100vh;
+    width: 100vw;
+}
+.contact{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    background-color: aqua;
+}
+
+.contact .cont-form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact .cont-form form {
+    margin-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.contact .cont-form form .form-gp{
+    display: flex;
+    gap: 1rem;
+}
+
+.contact .cont-form form .form-gp input{
+    width: 15rem;
+    height: 3rem;
+    margin-top: 12px;
+    border-radius: 0.5rem;
+    border-radius: 0.5rem;
+    margin: 1rem 0;
+    padding: 1.4rem;
+}
+
+.contact .cont-form form .form-gp-2 textarea{
+    width: 80%;
+    border-radius: 0.5rem;
+    margin: 1rem 0;
+    padding: 1.4rem;
+    font-size: 1rem;
+    height: 300px;
+    
+}
+/*submit btn*/
+
+.s-btn button {
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+  
+.s-btn  button {
+    --primary-color: #111;
+    --hovered-color: #0a6322;
+    position: relative;
+    display: flex;
+    font-weight: 600;
+    font-size: 20px;
+    gap: 0.5rem;
+    align-items: center;
+  }
+  
+.s-btn   button p {
+    margin: 0;
+    position: relative;
+    font-size: 20px;
+    color: var(--primary-color);
+  }
+  
+.s-btn   button::after {
+    position: absolute;
+    content: "";
+    width: 0;
+    left: 0;
+    bottom: -7px;
+    background: var(--hovered-color);
+    height: 2px;
+    transition: 0.3s ease-out;
+  }
+  
+.s-btn   button p::before {
+    position: absolute;
+    /*   box-sizing: border-box; */
+    content: "Submit";
+    width: 0%;
+    inset: 0;
+    color: var(--hovered-color);
+    overflow: hidden;
+    transition: 0.3s ease-out;
+  }
+  
+.s-btn button:hover::after {
+    width: 100%;
+  }
+  
+.s-btn  button:hover p::before {
+    width: 100%;
+  }
+  
+.s-btn   button:hover svg {
+    transform: translateX(4px);
+    color: var(--hovered-color);
+  }
+  
+.s-btn   button svg {
+    color: var(--primary-color);
+    transition: 0.2s;
+    position: relative;
+    width: 15px;
+    transition-delay: 0.2s;
+  }
+  
