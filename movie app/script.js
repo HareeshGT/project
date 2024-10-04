@@ -1,4 +1,4 @@
-const KEY = "3fd2be6f0c70a2a598f084ddfb75487c";
+const KEY = "2ed2bc1a011ffddbbb13031e85131356";
 // For educational purposes only - DO NOT USE in production
 // Request your own key for free: https://developers.themoviedb.org/3
 const API_URL = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${KEY}&page=1`;
