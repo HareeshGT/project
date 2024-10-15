@@ -1,6 +1,12 @@
-const KEY = "3fd2be6f0c70a2a598f084ddfb75487c";
-// For educational purposes only - DO NOT USE in production
-// Request your own key for free: https://developers.themoviedb.org/3
+const options = {
+  method: 'GET',
+  headers: {
+    accept: 'application/json',
+    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxYWZjODMwZDExYzZhZDcyMzhhNDAzNWIzN2M1ODBmMyIsIm5iZiI6MTcyODk2NTUyNS4wMjg1MDEsInN1YiI6IjY3MGRlYWM1YjE1ZDk3YjFhOTNkNjRiYSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.MkMXNOdAyLXWyBZy1C9c5aFEvtRP5fORITEHLbzsKLM'
+  }
+};
+
+const KEY = "1afc830d11c6ad7238a4035b37c580f3";
 const API_URL = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${KEY}&page=1`;
 const IMG_PATH = "https://image.tmdb.org/t/p/w1280";
 const SEARCH_API = `https://api.themoviedb.org/3/search/movie?api_key=${KEY}&query=`;
@@ -22,19 +28,16 @@ const showMovies = (movies) => {
     const movieElement = document.createElement("div");
     movieElement.classList.add("movie");
     movieElement.innerHTML = `
-    <img
-      src="${IMG_PATH + poster_path}"
-      alt="${title}"
-    />
-    <div class="movie-info">
-      <h3>${title}</h3>
-      <span class="${getClassByRate(vote_average)}">${vote_average}</span>
-    </div>
-    <div class="overview">
-      <h3>Overview</h3>
-      ${overview}
-    </div>
-  `;
+      <img src="${IMG_PATH + poster_path}" alt="${title}" />
+      <div class="movie-info">
+        <h3>${title}</h3>
+        <span class="${getClassByRate(vote_average)}">${vote_average}</span>
+      </div>
+      <div class="overview">
+        <h3>Overview</h3>
+        ${overview}
+      </div>
+    `;
     main.appendChild(movieElement);
   });
 };
@@ -45,7 +48,23 @@ const getMovies = async (url) => {
   showMovies(data.results);
 };
 
-getMovies(API_URL);
+const authenticateAndFetchMovies = async () => {
+  try {
+    const response = await fetch('https://api.themoviedb.org/3/authentication', options);
+    const authData = await response.json();
+    
+    if (response.ok) {
+      // Token is valid; now fetch movies
+      await getMovies(API_URL);
+    } else {
+      console.error("Authentication failed:", authData);
+    }
+  } catch (error) {
+    console.error("Error during authentication:", error);
+  }
+};
+
+authenticateAndFetchMovies();
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -53,5 +72,7 @@ form.addEventListener("submit", (e) => {
   if (searchTerm && searchTerm !== "") {
     getMovies(SEARCH_API + searchTerm);
     search.value = "";
-  } else history.go(0);
+  } else {
+    history.go(0);
+  }
 });
